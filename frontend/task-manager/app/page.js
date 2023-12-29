@@ -1,6 +1,14 @@
+import React from "react";
+import Tasktitle from "@/components/Tasktitle";
+import Tasks from "@/components/Tasks"; // Make sure to import the Tasks component
 
-export default function Home() {
+const AllTasksPage = () => {
   return (
-<div>Hello World</div>
-  )
-}
+    <>
+      <Tasktitle title="All Tasks" />
+      <Tasks />
+    </>
+  );
+};
+
+export default AllTasksPage;
