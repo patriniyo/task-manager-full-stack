@@ -9,14 +9,15 @@ const createTask = async (req, res) => {
     console.log(req.body);
    
   try {
-    const { userId, description, title } =
+    const { userId, description, title, completed } =
       req.body;
 
     const task = await prisma.task.create({
       data: {
         userId: parseInt(userId),
-        description: description,
-        title: title,
+        description,
+        title,
+        completed
       },
     });
 

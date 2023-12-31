@@ -47,6 +47,8 @@ const CreateTaskModal = ({ closeModal }) => {
       description,
       completed
     };
+    console.log("Data to be sent");
+    console.log(taskData);
 
     try {
       const response = await fetch(
