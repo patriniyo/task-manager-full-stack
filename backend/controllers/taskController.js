@@ -138,6 +138,8 @@ const updateTask = async (req, res) => {
 const deleteTask = async (req, res) => {
   try {
     const taskId = parseInt(req.params.id);
+    // console.log("Task ID :");
+    // console.log(taskId);
 
     const deletedTask = await prisma.task.delete({
       where: {
