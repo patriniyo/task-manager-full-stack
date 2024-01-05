@@ -9,7 +9,7 @@ const getTasks = async () => {
   return tasksData.json();
 };
 
-const TaskList = () => {
+const TaskList = ({triggerAlert}) => {
   const [tasksData, setTasksData] = useState([]);
 
   useEffect(() => {
@@ -21,11 +21,6 @@ const TaskList = () => {
     fetchData();
   }, [tasksData]);
 
-  const refreshTaskList = async () => {
-    const data = await getTasks();
-    setTasksData(data.tasks);
-  };
-
   return (
     <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
       {tasksData.map((task) => (
@@ -35,6 +30,7 @@ const TaskList = () => {
           title={task.title}
           description={task.description}
           completed={task.completed}
+          triggerAlert={triggerAlert}
         />
       ))}
     </div>
