@@ -1,12 +1,13 @@
-import React from "react";
+// AllTasksPage.js
 import Tasktitle from "@/components/Tasktitle";
-import Tasks from "@/components/Tasks"; // Make sure to import the Tasks component
+import TaskList from "@/components/TaskList";
+
 
 const AllTasksPage = () => {
   return (
     <>
       <Tasktitle title="All Tasks" />
-      <Tasks />
+      <TaskList />
     </>
   );
 };

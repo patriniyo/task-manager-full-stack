@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from "react";
-import CreateTaskModal from "./CreateTaskModal";
+
+import TaskModal from "./TaskModal";
 
 const Tasktitle = ({ title }) => {
   const [isModalOpen, setIsModalOpen] =
@@ -31,9 +32,9 @@ const Tasktitle = ({ title }) => {
         </div>
       </div>
       {isModalOpen && (
-        <CreateTaskModal
-          closeModal={closeModal}
-        />
+        <TaskModal
+        closeModal={closeModal}
+      />
       )}
     </div>
   );

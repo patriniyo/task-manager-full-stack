@@ -9,14 +9,15 @@ const createTask = async (req, res) => {
     console.log(req.body);
    
   try {
-    const { userId, description, title } =
+    const { userId, description, title, completed } =
       req.body;
 
     const task = await prisma.task.create({
       data: {
         userId: parseInt(userId),
-        description: description,
-        title: title,
+        description,
+        title,
+        completed
       },
     });
 
@@ -137,6 +138,8 @@ const updateTask = async (req, res) => {
 const deleteTask = async (req, res) => {
   try {
     const taskId = parseInt(req.params.id);
+    // console.log("Task ID :");
+    // console.log(taskId);
 
     const deletedTask = await prisma.task.delete({
       where: {
